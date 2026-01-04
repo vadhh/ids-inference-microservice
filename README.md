@@ -5,6 +5,10 @@
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue?style=flat-square)
 ![ML](https://img.shields.io/badge/Sklearn-SVM%20%2B%20PCA-orange?style=flat-square)
 
+> 🎓 **Academic Context:** This project is a production refactor of a research thesis.
+> The original "notebook-style" research code and full experiments can be found here:
+> **[📂 Link to Original Thesis Repository](https://github.com/vadhh/ids-thesis-svm)**
+
 A production-grade Machine Learning microservice for real-time Network Intrusion Detection. This project refactors an academic thesis ("Optimization of SVM utilizing PCA") into a scalable, containerized REST API.
 
 It utilizes **Principal Component Analysis (PCA)** to reduce network traffic feature space by **70% (78 $\to$ 23 features)** while maintaining **95% variance**, resulting in significantly faster inference times for real-time deployment.
