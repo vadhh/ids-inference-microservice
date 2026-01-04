@@ -13,15 +13,16 @@ It utilizes **Principal Component Analysis (PCA)** to reduce network traffic fea
 
 The system transforms raw network traffic vectors into threat predictions using a strict scikit-learn pipeline.
 
+
 ```mermaid
 graph LR
-    A[Client Request] -->|JSON (78 Features)| B(FastAPI Endpoint)
+    A[Client Request] -- "JSON - 78 Features" --> B(FastAPI Endpoint)
     B --> C{Input Validation}
-    C -->|Valid| D[Standard Scaler]
-    D -->|Normalized| E[PCA Transform]
-    E -->|Reduced (23 Features)| F[SVM Classifier]
-    F -->|Prediction| G[Response]
-    C -->|Invalid| H[400 Error]
+    C -- Valid --> D[Standard Scaler]
+    D -- Normalized --> E[PCA Transform]
+    E -- "Reduced - 23 Features" --> F[SVM Classifier]
+    F -- Prediction --> G[Response]
+    C -- Invalid --> H[400 Error]
 ```
 
 ## 🚀 Key Features
@@ -52,6 +53,7 @@ docker build -t ids-api:v1 .
 docker run -d -p 8000:8000 --name ids-service ids-api:v1
 ```
 2. API Endpoints
+   
 | Method | Endpoint | Description |
 | --- | --- | --- |
 | GET | /health | Health check and model status |
