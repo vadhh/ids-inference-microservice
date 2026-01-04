@@ -1,0 +1,35 @@
+# --- Python & OS Junk ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.env
+venv/
+.venv/
+
+# --- IDE Settings ---
+.vscode/
+.idea/
+
+# --- HEAVY DATA (DO NOT COMMIT) ---
+# We ignore the entire data directory because it contains Parquet/PCAP files
+data/
+*.parquet
+*.zip
+*.csv
+*.npy
+
+# --- MODELS ---
+# Default: Ignore all models to prevent bloating the repo
+models/*
+
+# Exception: Allow the specific production artifacts needed for the Docker image
+# (ONLY if they are < 100MB. If larger, use Git LFS)
+!models/sprint6_svm_model.pkl
+!models/sprint6_pca_model.pkl
+!models/sprint6_scaler.pkl
+
+# --- LOGS & REPORTS ---
+reports/logs/
+*.log
+
